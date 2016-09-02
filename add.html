@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>add.c</title>
+  </head>
+
+  <body>
+    <p>See browser developer console.</p>
+
+    <script>
+      fetch('/add.wasm')
+        .then(function (res) {
+          return res.arrayBuffer()
+        })
+        .then(function (arrayBuffer) {
+          const binArray = new Uint8Array(arrayBuffer)
+          const module   = Wasm.instantiateModule(binArray, {});
+
+          console.log('5 + 8 = ' + module.exports.add(5, 8))
+        })
+    </script>
+  </body>
+</html>

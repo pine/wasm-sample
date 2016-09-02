@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>jscall.c</title>
+  </head>
+
+  <body>
+    <p>See browser developer console.</p>
+
+    <script>
+      function cstr2str(buf, pos) {
+        var s = ''
+
+        while (buf.length > pos && buf[pos] != 0) {
+          s += String.fromCharCode(buf[pos])
+          ++pos
+        }
+
+        return s
+      }
+
+      fetch('/jscall.wasm')
+        .then(function (res) {
+          return res.arrayBuffer()
+        })
+        .then(function (arrayBuffer) {
+          const binArray = new Uint8Array(arrayBuffer)
+          const module   = Wasm.instantiateModule(binArray, {
+            env: {
+              alert: function (ptr) {
+                const memory = new Uint8Array(module.exports.memory)
+                const str    = cstr2str(memory, ptr)
+                console.log(str)
+              },
+            },
+          })
+          module.exports.hello();
+        })
+    </script>
+  </body>
+</html>

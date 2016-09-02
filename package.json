@@ -1,0 +1,15 @@
+{
+  "name": "wasm-sample",
+  "version": "1.0.0",
+  "description": "wasm-sample -----------",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "http-server -o"
+  },
+  "author": "Pine Mizune",
+  "license": "Public Domain"
+}
