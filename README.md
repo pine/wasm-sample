@@ -18,5 +18,8 @@ $ make
 $ make server
 ```
 
+## See also
+- [WebAssembly 入門](https://speakerdeck.com/pine613/webassembly-ru-men) (Japanese)
+
 ## License
 Public Domain
