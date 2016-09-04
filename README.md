@@ -10,6 +10,7 @@ wasm-sample
   - sexpr-wasm-prototype
     - https://github.com/WebAssembly/sexpr-wasm-prototype 1978d8fd6a0360d4733588079e5129518d189d43
   - Node.js
+  - Perl
 
 ## Getting Started
 
