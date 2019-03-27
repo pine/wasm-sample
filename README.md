@@ -1,6 +1,8 @@
 wasm-sample
 -----------
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pine/wasm-sample.svg)](https://greenkeeper.io/)
+
 ## Requirements
   - LLVM 4.0.0
     - http://llvm.org/git/clang.git 067ded57a22746e0941fbbdd817f53edd902cb18
